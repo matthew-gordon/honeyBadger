@@ -1,9 +1,11 @@
 # Planning our application
 
 ### Answer questions
+
  - What am I building?
  - Who am I building it for?
  - What features do I need to have?
+
 ### User Stories
 ### Model our Data
 ### Think through the pages I need in my app
