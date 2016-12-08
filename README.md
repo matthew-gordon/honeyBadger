@@ -99,4 +99,9 @@ Forum Post
 1. - Landing page
 2. - Log in - Sign up
 3. - Dashboard
-  - courses/index
+  *** admin ***
+  - courses/index (manager)
+  - courses/index/:id (individual course)
+    - courses/index/:id/material/:training
+    - courses/index/:id/material/:work
+  - 
