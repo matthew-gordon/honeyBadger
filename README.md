@@ -105,7 +105,7 @@ Forum Post
   - courses/index (manager) 
     - courses/index/:id (show)
     - courses/index/tracks (manager)
-      - courses/index/tracks/:id
+      - courses/index/tracks/:id (show)
   - forum/index (manager)
     - forum/index/:id (show)
   - badges/index (manager)
