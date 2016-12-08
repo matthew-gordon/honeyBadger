@@ -67,4 +67,36 @@
 
 ## Modeling our Data
 
+Course
+ title:string
+ description:string
+ badges:object
+  name:string
+  description:textarea
+  value:integer
+
+Training Material
+ title:string
+ description:string
+ 
+User(admin/user)
+ id:integer
+ post_id:integer
+ name:string
+ role:string
+ email:string
+ bio:textarea
+ isAdmin:boolean
+
+Forum Post
+ title:string
+ user_id:integer
+ description:textarea
+ timestamp:dateTime
+ 
 ## Think thorught the pages I need in my app
+
+1. - Landing page
+2. - Log in - Sign up
+3. - Dashboard
+  - courses/index
