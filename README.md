@@ -19,11 +19,11 @@
 3. What features do we need to have?
 
 - Admin
- - dashboard
-  - courses
-    - create / read / update / destroy
-  - students
-    - create / read / update / destroy
+  - dashboard
+    - courses
+      - create / read / update / destroy
+    - students
+      - create / read / update / destroy
    
 ## User Stories
 
