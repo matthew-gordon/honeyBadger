@@ -20,17 +20,17 @@
 
 - Admin
   - dashboard
-    1. alerts
+   1. alerts
      - courses
        - students enrolled
        - assignments
          - submitted
          - graded
-    2. courses
+   2. courses
      - create / read / update / destroy
      - training material
        - create/ read / update / destroy
-    3. students
+   3. students
      - create / read / update / destroy
     
    
