@@ -1,4 +1,4 @@
-# Planning our application
+# Planning my application
 
 ### Answer questions
 
@@ -18,22 +18,26 @@
 
 3. What features do we need to have?
 
+Admin
+ dashboard
+  - courses
+   - create / read / update / destroy
+  - students
+   - create / read / update / destroy
+   
 ## User Stories
 
  - [ ] as an educator, I want to be able to create courses so I can build out an entire curriculum from one dashboard.
+ - [ ] as an educator, I want to be able to manage students so I can easily assign courses/enroll students.
  - [ ] as an educator, I want to be able to add training material/course work to created courses so students can access them.
  - [ ] as an educator, I want an alerts panel to show relevant information about my created course(s) so I can manage them.
  - [ ] as an educator, I want to have easy access to view enrolled students profiles so I can get to know them.
- - [ ] as an educator, I want to have easy acces to enroll new students so they can access courses and material.
  - [ ] as a user, I want to be able to access courses that I am enrolled in so I can access training material/coursework.
- - [ ] as a user, I want the course to be structured with "tracks" so I can earn badges for completed work.
+ - [ ] as a user, I want the course to be structured with "tracks" so I can earn badges for completed work (gamify).
  - [ ] as a user, I want to be able to communicate with my instructor so that I can ask for help.
  - [ ] as a user, I want to be able to communicate with my peers so that I can ask for help.
  - [ ] as a user, I want to submit feature requests through my dashboard so that I can see improvements in the LMS.
 
 ## Modeling our Data
-
-title:string
-description:textarea
 
 ## Think thorught the pages I need in my app
