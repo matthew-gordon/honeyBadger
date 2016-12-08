@@ -57,15 +57,25 @@
 ## User Stories
 
  - [ ] as an admin, I want to be able to create courses so I can build out an entire curriculum from one dashboard.
+ 
  - [ ] as an admin, I want to be able to manage students so I can easily assign courses/enroll students.
+ 
  - [ ] as an admin, I want to be able to add training material/course work to created courses so students can access them.
+ 
  - [ ] as an admin, I want to be able to create badges so that students can earn them for completed work.
+ 
  - [ ] as an admin, I want an alerts panel to show relevant information about my created course(s) so I can manage them.
+ 
  - [ ] as an admin, I want to have easy access to view enrolled students profiles so I can get to know them.
+ 
  - [ ] as a user, I want to be able to access courses that I am enrolled in so I can access training material/coursework.
+ 
  - [ ] as a user, I want the course to be structured with "tracks" so I can earn badges for completed work (gamify).
+ 
  - [ ] as a user, I want to be able to communicate with my instructor so that I can ask for help.
+ 
  - [ ] as a user, I want to be able to communicate with my peers so that I can ask for help.
+ 
  - [ ] as a user, I want to submit feature requests through my dashboard so that I can see improvements in the LMS.
 
 ## Modeling our Data
