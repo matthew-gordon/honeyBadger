@@ -10,16 +10,15 @@
 
 ## Questions
 
-What am I building? A project manager for web developers. A place where I can create projects to share with collaborators, or manage by myself.
-Who am I building it for? I am building it for myself, also for the web development community. Managing a project with a central location for tasks, assets, and planning. This will help project workflow and time management.
+1. What am I building? A learning Managment System (LMS) for technical learning platform.
 
-## What features do we need to have?
+2. Who am I building it for? I am building it for Educators, as well as students in Web Development. Having an affective, engaging learning management platform for students and educators can boost retention and student participation.
 
+3. What features do we need to have?
 
 ## User Stories
 
-As a user, I want to be able to create empty project so that I can work on the specific project.
-As a user, I want to be able to edit and delete projects so that I can manage the project easily.
+ - [ ] As a user, I want to be able to create empty project so that I can work on the specific project.
 
 ## Modeling our Data
 
