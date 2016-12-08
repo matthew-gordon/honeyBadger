@@ -30,7 +30,9 @@
        [ create | read | update | destroy ]
    3. students
      - [ create | read | update | destroy ]
-   4. Forum
+   4. badges
+     - [ create | read | update | destroy ]
+   5. Forum
      
 - Student(user)
   - dashboard
@@ -38,14 +40,14 @@
      - assignments
        - submitted
        - graded
+       - badges
      - messages
    2. courses
      - tracks
        - training material 
        - coursework
    3. badges
-     - earned
-     - left to earn
+     - [ read ]
    4. Forum
 
 - Forum/wiki
@@ -57,6 +59,7 @@
  - [ ] as an admin, I want to be able to create courses so I can build out an entire curriculum from one dashboard.
  - [ ] as an admin, I want to be able to manage students so I can easily assign courses/enroll students.
  - [ ] as an admin, I want to be able to add training material/course work to created courses so students can access them.
+ - [ ] as an admin, I want to be able to create badges so that students can earn them for completed work.
  - [ ] as an admin, I want an alerts panel to show relevant information about my created course(s) so I can manage them.
  - [ ] as an admin, I want to have easy access to view enrolled students profiles so I can get to know them.
  - [ ] as a user, I want to be able to access courses that I am enrolled in so I can access training material/coursework.
@@ -98,10 +101,13 @@ Forum Post
 
 1. - Landing page
 2. - Log in - Sign up
-3. - Dashboard
-  *** admin ***
-  - courses/index (manager)
-  - courses/index/:id (individual course)
-    - courses/index/:id/material/:training
-    - courses/index/:id/material/:work
-  - 
+3. - Dashboard ( admin / user )
+  - courses/index (manager) 
+    - courses/index/:id (show)
+    - courses/index/tracks (manager)
+      - courses/index/tracks/:id
+  - forum/index (manager)
+    - forum/index/:id (show)
+  - badges/index (manager)
+    - badges/index/:id (show)
+4. - Contact
