@@ -20,10 +20,19 @@
 
 - Admin
   - dashboard
+    - alerts
+      - courses
+        - students enrolled
+        - assignments
+          - submitted
+          - graded
     - courses
       - create / read / update / destroy
+      - training material
+        - create/ read / update / destroy
     - students
       - create / read / update / destroy
+    
    
 ## User Stories
 
