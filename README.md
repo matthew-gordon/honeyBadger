@@ -49,9 +49,9 @@
    4. Forum
 
 - Forum/wiki
-   admin - [ create | read | update | destroy ]
+   - admin [ create | read | update | destroy ]
    
-   user - [ create | read | update ]
+   - user [ create | read | update ]
 ## User Stories
 
  - [ ] as an admin, I want to be able to create courses so I can build out an entire curriculum from one dashboard.
