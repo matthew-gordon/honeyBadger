@@ -50,6 +50,7 @@
 
 - Forum/wiki
    admin - [ create | read | update | destroy ]
+   
    user - [ create | read | update ]
 ## User Stories
 
