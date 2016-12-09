@@ -1,0 +1,9 @@
+{
+  "name": "honeyBadger",
+  "version": "1.0.0",
+  "description": "Q2 Project",
+  "main": "app.js",
+  "repository": "https://github.com/matthew-gordon/honeyBadger.git",
+  "author": "Kyle Gray <th33nd3r@gmail.com>",
+  "license": "MIT"
+}
