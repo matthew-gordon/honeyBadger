@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 
+const path = require('path');
 app.use(express.static(path.join('public')));
 
 app.use(bodyParser.json());
