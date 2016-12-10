@@ -8,6 +8,7 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <title>User Dashboard</title>
 </head>
 <body>
@@ -27,11 +28,12 @@
         </div>
       </div>
     </nav>
+  <!-- generic cards with links for badges, daily plan, and assignments -->
     <div class="row">
       <div class="col s4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
+            <span class="card-title"><a href="dailyplan.html">Daily Plan</a></span>
             <p>I am a very simple card. I am good at containing small bits of information.
             I am convenient because I require little markup to use effectively.</p>
           </div>
@@ -44,7 +46,7 @@
       <div class="col s4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
+            <span class="card-title"><a href="#">Assignments</a></span>
             <p>I am a very simple card. I am good at containing small bits of information.
             I am convenient because I require little markup to use effectively.</p>
           </div>
@@ -57,7 +59,7 @@
       <div class="col s4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
+            <span class="card-title"><a href="#">Badge Tracker</a></span>
             <p>I am a very simple card. I am good at containing small bits of information.
             I am convenient because I require little markup to use effectively.</p>
           </div>
@@ -68,13 +70,12 @@
         </div>
       </div>
     </div>
+    <!-- footer with copyright and home link -->
     <footer class="page-footer">
         <div class="footer-copyright valign-wrapper">
             <div class="container">
                 © 2016 Team honeyBadger
-                <ul class="right">
-                  <li><a href="index.html">Home</a></li>
-                </ul>
+                <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
             </div>
         </div>
     </footer>
