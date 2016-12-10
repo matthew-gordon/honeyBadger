@@ -12,9 +12,10 @@ app.get('/', (req, res, next) => {
 app.use(bodyParser.json());
 // intitializing the routes
 const users = require('./routes/users');
+const badges = require('./routes/badges');
 
 app.use(users);
-
+app.use(badges);
 
 //not 100% sure what this does but im pretty sure we need it. kg
 switch (app.get('env')) {

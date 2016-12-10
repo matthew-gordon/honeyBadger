@@ -74,7 +74,7 @@ route.patch('/badges/:id', (req, res, next) => {
   const decamelBadges = decamelizeKeys(req.body);
   knex('badges')
   .where('id', req.params.id)
-  first()
+  .first()
   .then((badge) => {
     if(!badge){
       // TODO: Use boom to create a custom err
