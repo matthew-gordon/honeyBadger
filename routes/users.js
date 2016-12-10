@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bcrypt = require('bcrypt');
-const knex = require('knex');
+const knex = require('/knex');
 const boom = require('boom');
 const {
   camelizeKeys,
