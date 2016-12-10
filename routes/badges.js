@@ -1,5 +1,7 @@
 'use strict';
 
+// testing
+
 const express = require('express');
 const knex = require('../knex');
 const route = express.Router();
@@ -49,7 +51,7 @@ route.get('/badges/:id', (req, res, next) => {
 // make a new badge!
 route.post('/badges', (req, res, next) => {
   const decamelBadges = decamelizeKeys(req.body);
-  
+
   const badgeObj = {
     name: decamelBadges.name,
     badge_image_id: decamelBadges.badge_image_id,
