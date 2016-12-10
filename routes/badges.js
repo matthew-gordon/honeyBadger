@@ -1,7 +1,5 @@
 'use strict';
 
-// testing
-
 const express = require('express');
 const knex = require('../knex');
 const route = express.Router();
