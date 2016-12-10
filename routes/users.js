@@ -88,3 +88,17 @@ route.post('/users', (req, res, next) =>{
     }
   });
 });
+
+
+route.delete('/users/:id', (req, res, next) =>{
+  knex('users')
+  .where('id', req.params.id)
+  .del()
+  .then(() => {
+    res.sendStatus(200);
+  })
+  .catch(err => {
+    // TODO: Use boom to create a custom err
+    next(err);
+  });
+});
