@@ -48,4 +48,20 @@ route.get('/badges/:id', (req, res, next) => {
 });
 
 // make a new badge!
-route.post('/badges')
+route.post('/badges', (req, res, next) => {
+  const decamelBadges = humps.decamelizeKeys(req.body);
+  const badgeObj = {
+    //TODO: need to know what the migration looks like
+  };
+  knex('badges')
+  .insert(badgeObj,// TODO: ^^^
+[])
+  .then((badge) => {
+    res.set('Content-Type', 'application/json');
+    res.send(humps.camelizeKeys(badge[0]));
+  })
+  .catch((err) => {
+    // TODO: Use boom to create a custom err
+    next(err);
+  });
+});
