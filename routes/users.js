@@ -127,3 +127,5 @@ route.delete('/users/:id', (req, res, next) =>{
     next(err);
   });
 });
+
+module.exports = route;
