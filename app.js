@@ -4,10 +4,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const path = require('path');
 
-app.get('/', (req, res, next) => {
-  res.send('Hello world!');
-});
+app.use(express.static(path.join('public')));
 
 app.use(bodyParser.json());
 // intitializing the routes
