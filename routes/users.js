@@ -11,7 +11,7 @@ const {
 const route = express.Router();
 
 //route to get all user information
-route.get('/users', (res, req, next) => {
+route.get('/users', (req, res, next) => {
   knex('users')
   .orderBy('id')
   .then((users) => {
@@ -60,15 +60,13 @@ route.post('/users', (req, res, next) =>{
     if(!results){
       knex('users')
       .insert({
-        //TODO: need to add the user not sure exactly what the db looks like yet
-
-        //
+        name: req.body.name,
+        email: req.body.email,
+        isAdmin: req.body.isAdmin
       }, '*')
       .then(()=>{
         knex('users')
-        //TODO: need to add the user not sure exactly what the db looks like yet
-        .select('id', 'name', 'email')
-        //^^^
+        .select('id', 'name', 'email', 'isAdmin')
         //TODO: this could also change to user name or however you login through github
         .where('email', req.body.email)
         .then(result => {
@@ -88,6 +86,7 @@ route.post('/users', (req, res, next) =>{
     }
   });
 });
+
 //Update one user!!!
 route.patch('/users/:id', (req, res, next) => {
   const decamelUsers =decamelizeKeys(req.body);
@@ -101,10 +100,10 @@ route.patch('/users/:id', (req, res, next) => {
     }
     return knex('users')
     .update({
-      // TODO: need to see db/migration before filling this out
-
-
-    })
+      name: decamelUsers.name,
+      email: decamelUsers.email,
+      isAdmin: decamelUsers.isAdmin
+    }, '*')
     .where('id', req.params.id);
   })
   .then((users) => {
@@ -116,16 +115,26 @@ route.patch('/users/:id', (req, res, next) => {
 });
 
 route.delete('/users/:id', (req, res, next) =>{
+  let user;
   knex('users')
   .where('id', req.params.id)
-  .del()
-  .then(() => {
-    res.sendStatus(200);
+  .first()
+    .then((row) => {
+      if(!row) {
+        return next();
+      }
+      user = row;
+      return knex('users')
+      .del()
+      .where('id', req.params.id);
+    })
+      .then(() => {
+      delete user.id;
+      res.send(camelizeKeys(user));
   })
-  .catch(err => {
-    // TODO: Use boom to create a custom err
-    next(err);
+    .catch((err) => {
+      next(boom.create(404, "Not Found"));
+    });
   });
-});
 
 module.exports = route;
