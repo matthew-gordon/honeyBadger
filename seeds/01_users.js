@@ -13,7 +13,7 @@ exports.seed = function(knex, Promise) {
           is_admin: true
         }),
         knex('users').insert({
-          id: 1,
+          id: 2,
           name: 'Peter Venkman',
           email: 'peter@ghostbusters.com',
           is_admin: false
