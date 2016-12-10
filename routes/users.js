@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bcrypt = require('bcrypt');
-const knex = require('/knex');
+const knex = require('../knex');
 const boom = require('boom');
 const {
   camelizeKeys,
@@ -26,7 +26,7 @@ route.get('/users', (res, req, next) => {
 });
 
 //route to get a specfic users
-route.get('/users/:id', (req,res,next) =>{
+route.get('/users/:id', (req, res, next) =>{
   //TODO: find max id and make sure `${id}` < max id in db
   if(isNaN(req.params.id)) {
     //TODO:use boom to create a custom error
