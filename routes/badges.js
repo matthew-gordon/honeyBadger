@@ -4,10 +4,7 @@ const express = require('express');
 // is this supposed to be require('../knex')??
 const knex = require('knex');
 const route = express.Router();
-const {
-  camelizeKeys,
-  decamelizeKeys
-  } = require('humps');
+const { camelizeKeys, decamelizeKeys } = require('humps');
 const boom = require('boom');
 
 //get all badges

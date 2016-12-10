@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
-const morgan = require('morgon');
+const morgan = require('morgan');
 
 app.get('/', (req, res, next) => {
   res.send('Hello world!');
