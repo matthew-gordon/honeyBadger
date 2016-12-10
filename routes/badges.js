@@ -1,7 +1,8 @@
 'use strict';
 
+// testing
+
 const express = require('express');
-// is this supposed to be require('../knex')??
 const knex = require('../knex');
 const route = express.Router();
 const { camelizeKeys, decamelizeKeys } = require('humps');
@@ -50,12 +51,15 @@ route.get('/badges/:id', (req, res, next) => {
 // make a new badge!
 route.post('/badges', (req, res, next) => {
   const decamelBadges = decamelizeKeys(req.body);
+
   const badgeObj = {
-    //TODO: need to know what the migration looks like
+    name: decamelBadges.name,
+    badge_image_id: decamelBadges.badge_image_id,
+    badge_images: decamelBadges.badge_images,
+    is_complete: decamelBadges.is_complete
   };
   knex('badges')
-  .insert(badgeObj,// TODO: ^^^
-[])
+  .insert(badgeObj, '*')
   .then((badge) => {
     res.set('Content-Type', 'application/json');
     res.send(camelizeKeys(badge[0]));
@@ -79,9 +83,10 @@ route.patch('/badges/:id', (req, res, next) => {
     }
     return knex('badges')
     .update({
-      // TODO: need to see migration/db to fill out
-
-
+      name: decamelBadges.name,
+      badge_image_id: decamelBadges.badge_image_id,
+      badge_images: decamelBadges.badge_images,
+      is_complete: decamelBadges.is_complete
     }, '*')
     .where('id', req.params.id);
   })
