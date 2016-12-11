@@ -58,30 +58,23 @@ route.post('/badges', (req, res, next) => {
         .first()
         .then((results) => {
             if (!results) {
-                knex('badges')
+              console.log(results);
+                 knex('badges')
                     .insert({
+                        user_id: decamelBadges.user_id,
                         name: decamelBadges.name,
                         badge_image_id: decamelBadges.badge_image_id,
                         is_complete: decamelBadges.is_complete
                     }, '*')
-                    .then(() => {
-                        knex('badges')
-                            .select('id', 'name', 'badge_image_id', 'is_complete')
-                            .where('name', req.body.name)
-                            .then(result => {
-                                res.send(camelizeKeys(result[0]));
-                            })
-                            .catch((err) => {
-                                // TODO: Use boom to create a custom err
-                                next(err);
-                            });
+                    .then((badges) => {
+                      console.log(badges);
+                      res.set('Content-Type', 'text/plain');
+                      res.send(`${badges[0].name} successfully created`);
                     })
                     .catch((err) => {
                         // TODO: Use boom to create a custom err
                         next(err);
-
                     });
-
             } else {
                 res.status(400).send('User already exists');
             }
@@ -101,6 +94,7 @@ route.patch('/badges/:id', (req, res, next) => {
             }
             return knex('badges')
                 .update({
+                    user_id: decamelBadges.user_id,
                     name: decamelBadges.name,
                     badge_image_id: decamelBadges.badge_image_id,
                     is_complete: decamelBadges.is_complete

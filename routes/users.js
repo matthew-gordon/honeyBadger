@@ -65,19 +65,11 @@ route.post('/users', (req, res, next) => {
                         email: decamelBadges.email,
                         is_admin: decamelBadges.is_admin,
                         name: decamelBadges.name
-                    }, '*')
-                    .then(() => {
-                        knex('users')
-                            .select('id', 'email', 'isAdmin', 'name')
-                            //TODO: this could also change to user name or however you login through github
-                            .where('email', req.body.email)
-                            .then(result => {
-                                res.send(camelizeKeys(result[0]));
-                            })
-                            .catch((err) => {
-                                // TODO: Use boom to create a custom err
-                                next(err);
-                            });
+                    }, ['id', 'email', 'is_admin'])
+                    .then((users) => {
+                      console.log(users);
+                      res.set('Content-Type', 'text/plain');
+                      res.send(`${users[0].email} successfully created`);
                     })
                     .catch((err) => {
                         // TODO: Use boom to create a custom err
