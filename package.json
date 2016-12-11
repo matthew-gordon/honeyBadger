@@ -1,16 +1,21 @@
 {
   "name": "honeyBadger",
   "version": "1.0.0",
-  "description": "Q2 Project",
-  "engines": {
-    "node": "7.2.0"
-  },
+  "description": "",
   "main": "app.js",
-  "repository": "https://github.com/matthew-gordon/honeyBadger.git",
-  "author": "Kyle Gray <th33nd3r@gmail.com>",
-  "license": "MIT",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew-gordon/honeyBadger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew-gordon/honeyBadger#readme"
   },
   "dependencies": {
     "bcrypt": "^1.0.1",
