@@ -8,8 +8,18 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('badge_images').insert({
           id: 1,
-          complete_icon_url: 'complete_location_1',
-          incomplete_icon_url: 'incomplete_location_1'
+          complete_icon_url: '/img/htmlbronze.svg',
+          incomplete_icon_url: '/img/htmlbadge.svg'
+        }),
+        knex('badge_images').insert({
+          id: 2,
+          complete_icon_url: '/img/htmlsilver.svg',
+          incomplete_icon_url: '/img/htmlbadge.svg'
+        }),
+        knex('badge_images').insert({
+          id: 3,
+          complete_icon_url: '/img/htmlgold.svg',
+          incomplete_icon_url: '/img/htmlbadge.svg'
         })
       ]);
     })
