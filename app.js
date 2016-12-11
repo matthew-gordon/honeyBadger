@@ -17,7 +17,7 @@ app.use(users);
 app.use(badges);
 
 //not 100% sure what this does but im pretty sure we need it. kg
-// from MattG: @kg morgan is an HTTP logger, this switches the length of the
+// from MattG: @kg morgan is an HTTP request logger, this switches the length of the
 // output to the logger depending on what environmnt the app is in
 
 switch (app.get('env')) {
