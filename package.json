@@ -6,6 +6,9 @@
   "repository": "https://github.com/matthew-gordon/honeyBadger.git",
   "author": "Kyle Gray <th33nd3r@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
     "bcrypt": "^1.0.1",
     "body-parser": "^1.15.2",
