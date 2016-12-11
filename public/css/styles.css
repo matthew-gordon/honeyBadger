@@ -1,0 +1,47 @@
+/* -- GLOBAL -- */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* -- BADGES -- */
+
+.achievementBadge {
+  opacity: .25;
+  width: 5rem;
+}
+
+.badgeInactive {
+  opacity: .25;
+  width: 12rem;
+}
+
+.badgeInactiveSmall {
+  opacity: .25;
+  width: 8rem;
+}
+
+.badge:hover {
+    animation: rotate 1.5s infinite;
+    animation-direction: alternate;
+}
+
+/* -- KEYFRAMES -- */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* -- BUTTONS -- */
