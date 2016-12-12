@@ -24,7 +24,7 @@ body {
 }
 
 .badgeInactiveSmall {
-  opacity: .25;
+  /*opacity: .25;*/
   width: 8rem;
 }
 
