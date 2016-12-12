@@ -30,14 +30,13 @@ passport.use(new GitHubStrategy(githubConfig,
           knex('users')
             .insert(newUser, '*')
             .then((user) => {
-
               knex('badges')
                 .then((badges) => {
                   badges.forEach((badge) => {
                     knex('users_badges')
                       .insert({
-                        user_id: parseInt(user.id),
-                        badge_id: badge.id
+                        user_id: parseInt(user[0].github_id),
+                        badge_id: parseInt(badge.id)
                       }, '*')
                       .then((row) => {
                         return row;
