@@ -15,6 +15,7 @@ $badge_call.click(function(){
        });
      })
 
+     //test
 
   // Initialize collapsable menu
   $(".button-collapse").sideNav();
