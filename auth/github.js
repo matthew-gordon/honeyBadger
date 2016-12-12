@@ -46,7 +46,9 @@ passport.use(new GitHubStrategy(githubConfig,
                 .catch((err) => {
                   done(err);
                 });
-                done(null, user[0]);
+
+              done(null, user[0]);
+
             })
             .catch((err) => {
               done(err);
