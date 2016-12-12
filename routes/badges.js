@@ -27,20 +27,23 @@ const boom = require('boom');
 
 //from user id get all info related to selected user
 route.get('/badges/:userid', (req, res, next) =>{
-  console.log(req.params);
   if (isNaN(req.params.userid)) {
       // TODO: Use boom to create a custom err
       return next();
   }
-  knex.select(['users.name as userName', 'badges.id as badgeId', 'users_badges.is_complete as badgeComplete', 'badge_images.complete_icon_url as badgeCompleteLocation', 'badge_images.incomplete_icon_url as badgeIncompleteLocation', 'achievements.image_url as achievementsLocation','achievements.name as achievementName', 'users_achievements.is_complete as achievementComplete', 'tracks.name as trackName', 'tracks_badges.position as badgeTrackPosition']).from('users')
+  knex.select(['users.name as userName', 'tracks.name as trackName', 'badges.name as badgeName', 'tracks_badges.position as badgeTrackPosition', 'users_badges.is_complete as badgeComplete', 'badge_images.complete_icon_url as badgeCompleteLocation', 'badge_images.incomplete_icon_url as badgeIncompleteLocation', 'badges.id as badgeId']).from('users')
+  // DO NOT DELETE!! NOTE: we're not doing achievements right yet. cutting them out of the query until I figure it out.
+  // 'achievements.name as achievementName', 'achievements.image_url as achievementsLocation', 'users_achievements.is_complete as achievementComplete'
       .where('users.id', req.params.userid)
       .join('users_badges', 'users.id', 'users_badges.user_id')
       .join('badges', 'badges.id', 'users_badges.badge_id')
-      .join('users_achievements', 'users.id', 'users_achievements.user_id')
+      // .join('users_achievements', 'users.id', 'users_achievements.user_id')
       .join('badge_images', 'badge_images.id', 'badges.badge_image_id')
-      .join('achievements', 'achievements.id', 'users_achievements.achievements_id')
+      // .join('achievements', 'achievements.id', 'users_achievements.achievement_id')
       .join('tracks_badges', 'tracks_badges.badge_id', 'badges.id')
       .join('tracks', 'tracks.id', 'tracks_badges.track_id')
+      .orderBy('trackName')
+      .orderBy('tracks_badges.position')
       .then((badges) => {
           if (!badges) {
               // TODO: Use boom to create a custom err
