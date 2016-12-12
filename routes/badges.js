@@ -34,8 +34,8 @@ route.get('/badges/:userid', (req, res, next) =>{
   knex.select(['users.name as userName', 'tracks.name as trackName', 'badges.name as badgeName', 'tracks_badges.position as badgeTrackPosition', 'users_badges.is_complete as badgeComplete', 'badge_images.complete_icon_url as badgeCompleteLocation', 'badge_images.incomplete_icon_url as badgeIncompleteLocation', 'badges.id as badgeId']).from('users')
   // DO NOT DELETE!! NOTE: we're not doing achievements right yet. cutting them out of the query until I figure it out.
   // 'achievements.name as achievementName', 'achievements.image_url as achievementsLocation', 'users_achievements.is_complete as achievementComplete'
-      .where('users.id', req.params.userid)
-      .join('users_badges', 'users.id', 'users_badges.user_id')
+      .where('users.github_id', req.params.userid)
+      .join('users_badges', 'users.github_id', 'users_badges.user_id')
       .join('badges', 'badges.id', 'users_badges.badge_id')
       // .join('users_achievements', 'users.id', 'users_achievements.user_id')
       .join('badge_images', 'badge_images.id', 'badges.badge_image_id')
