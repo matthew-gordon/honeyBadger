@@ -6,7 +6,7 @@ const $badge_call = $('#badge_call');
 $badge_call.click(function(){
   // console.log('click me Alice');
 
-  $.getJSON(`/badges/2`)
+  $.getJSON(`badges/2`)
        .done((user) => {
          console.log(user);
        })
