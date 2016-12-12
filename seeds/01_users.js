@@ -7,20 +7,17 @@ exports.seed = function(knex, Promise) {
       return Promise.all([
         // Inserts seed entries
         knex('users').insert({
-          id: 1,
-          name: 'Bill Murray',
-          email: 'billmurray@caddyshack.com',
-          is_admin: true
+          github_id: 22156327,
+          name: 'Kyle-Gray',
+          is_admin: true,
+          gh_avatar_url: 'https://avatars.githubusercontent.com/u/22156327?v=3'
         }),
         knex('users').insert({
-          id: 2,
-          name: 'Peter Venkman',
-          email: 'peter@ghostbusters.com',
-          is_admin: false
+          github_id: 8294530,
+          name: 'chansehorton',
+          is_admin: false,
+          gh_avatar_url: 'https://avatars.githubusercontent.com/u/8294530?v=3'
         }),
       ]);
     })
-    .then(function() {
-      return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users))");
-    });
 };

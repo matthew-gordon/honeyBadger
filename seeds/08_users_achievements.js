@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('users_achievements').insert({
           id: 1,
-          user_id: 2,
+          user_id: 8294530,
           achievement_id: 1,
           is_complete: false
         })
