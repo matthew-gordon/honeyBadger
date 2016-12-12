@@ -3,11 +3,11 @@
 const express = require('express');
 const knex = require('../knex');
 const route = express.Router();
-const {
-    camelizeKeys,
-    decamelizeKeys
-} = require('humps');
+
+const { camelizeKeys, decamelizeKeys } = require('humps');
+
 const boom = require('boom');
+
 
 //keeping for when admin creates new track
 // route.get('/badges', (req, res, next) => {
