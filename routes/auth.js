@@ -1,8 +1,6 @@
 'use strict';
 
 const express = require('express');
-const knex = require('../knex');
-const boom = require('boom');
 const route = express.Router();
 
 const passportGitHub = require('../auth/github');
