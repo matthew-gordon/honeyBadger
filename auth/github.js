@@ -38,9 +38,6 @@ passport.use(new GitHubStrategy(githubConfig,
                         user_id: parseInt(user[0].github_id),
                         badge_id: parseInt(badge.id)
                       }, '*')
-                      .then((row) => {
-                        return row;
-                      })
                       .catch((err) => {
                         done(err);
                       });
@@ -49,6 +46,7 @@ passport.use(new GitHubStrategy(githubConfig,
                 .catch((err) => {
                   done(err);
                 });
+                done(null, user[0]);
             })
             .catch((err) => {
               done(err);
