@@ -14,8 +14,8 @@ body {
 /* -- BADGES -- */
 
 .achievementBadge {
-  opacity: .25;
-  width: 5rem;
+  opacity: 1;
+  width: 7rem;
 }
 
 .badgeInactive {

@@ -2,7 +2,6 @@
 
 const auth = require('../auth/verification');
 const express = require('express');
-const bcrypt = require('bcrypt');
 const knex = require('../knex');
 const boom = require('boom');
 const {
@@ -56,7 +55,7 @@ route.get('/users/:id', auth, (req, res, next) => {
 
 //route to add an user with a hashed password
 route.post('/users', auth, (req, res, next) => {
-    console.log(req.body);
+
     const decamelBadges = decamelizeKeys(req.body);
     // var hash = bcrypt.hashSync(req.body.password, 8);
     knex('users')
@@ -71,7 +70,7 @@ route.post('/users', auth, (req, res, next) => {
                         name: decamelBadges.name
                     }, ['id', 'email', 'is_admin'])
                     .then((users) => {
-                      console.log(users);
+
                       res.set('Content-Type', 'text/plain');
                       res.send(`${users[0].email} successfully created`);
                     })
