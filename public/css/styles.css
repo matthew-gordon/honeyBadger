@@ -33,15 +33,15 @@ body {
     animation-direction: alternate;
 }
 
-<<<<<<< HEAD
-.chip {
-  background: #fbc02d;
-  color #fff;
-=======
 #badger {
   padding-top: .6rem;
   opacity: 0.25;
->>>>>>> 0741668d0d5385e79e05abcc815e6c78aadf06ab
+}
+
+
+.chip {
+  background: #fbc02d;
+  color #fff;
 }
 
 /* -- KEYFRAMES -- */
