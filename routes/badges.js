@@ -89,13 +89,11 @@ route.get('/badges/:userid', auth, (req, res, next) =>{
 // make a new badge!
 route.post('/badges', auth, (req, res, next) => {
     const decamelBadges = decamelizeKeys(req.body);
-    console.log(decamelBadges);
     knex('badges')
         .where('name', req.body.name)
         .first()
         .then((results) => {
             if (!results) {
-              console.log(results);
                  knex('badges')
                     .insert({
                         user_id: decamelBadges.user_id,
@@ -104,7 +102,6 @@ route.post('/badges', auth, (req, res, next) => {
                         is_complete: decamelBadges.is_complete
                     }, '*')
                     .then((badges) => {
-                      console.log(badges);
                       res.set('Content-Type', 'text/plain');
                       res.send(`${badges[0].name} successfully created`);
                     })
