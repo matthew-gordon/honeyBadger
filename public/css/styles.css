@@ -43,6 +43,21 @@ body {
   background: #fbc02d;
   color #fff;
 }
+a:link {
+    color: #FBC02D;
+}
+
+a:visited {
+    color: #FBC02D;
+}
+
+a:hover {
+    color: #FBC02D;
+}
+
+a:active {
+    color: #FBC02D;
+}
 
 /* -- KEYFRAMES -- */
 
