@@ -16,7 +16,7 @@ exports.seed = function(knex, Promise) {
           id: 2,
           user_id: 8294530,
           badge_id: 2,
-          is_complete: false
+          is_complete: true
         }),
         knex('users_badges').insert({
           id: 3,
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           id: 4,
           user_id: 8294530,
           badge_id: 4,
-          is_complete: false
+          is_complete: true
         }),
         knex('users_badges').insert({
           id: 5,
