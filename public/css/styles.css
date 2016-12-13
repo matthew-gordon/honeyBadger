@@ -33,6 +33,11 @@ body {
     animation-direction: alternate;
 }
 
+#badger {
+  padding-top: .6rem;
+  opacity: 0.25;
+}
+
 /* -- KEYFRAMES -- */
 
 @keyframes rotate {
