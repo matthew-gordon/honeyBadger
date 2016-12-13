@@ -1,6 +1,6 @@
 'use strict';
 
-exports.seed = function(knex, Promise) {
+exports.seed = (knex, Promise) => {
   // Deletes ALL existing entries
   return knex('users').del()
     .then(() => {
@@ -19,5 +19,5 @@ exports.seed = function(knex, Promise) {
           gh_avatar_url: 'https://avatars.githubusercontent.com/u/8294530?v=3'
         }),
       ]);
-    })
+    });
 };
