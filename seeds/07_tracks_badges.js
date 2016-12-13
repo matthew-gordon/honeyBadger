@@ -1,5 +1,6 @@
+'use strict';
 
-exports.seed = function(knex, Promise) {
+exports.seed = (knex, Promise) =>{
   // Deletes ALL existing entries
   return knex('tracks_badges').del()
     .then(function () {
@@ -55,7 +56,7 @@ exports.seed = function(knex, Promise) {
         }),
       ]);
     })
-    .then(function() {
+    .then(() => {
       return knex.raw("SELECT setval('tracks_badges_id_seq', (SELECT MAX(id) FROM tracks_badges))");
     });
 };

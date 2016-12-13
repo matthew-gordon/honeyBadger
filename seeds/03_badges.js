@@ -1,9 +1,9 @@
 'use strict';
 
-exports.seed = function(knex, Promise) {
+exports.seed = (knex, Promise) => {
   // Deletes ALL existing entries
   return knex('badges').del()
-    .then(function () {
+    .then(() => {
       return Promise.all([
         // Inserts seed entries
         knex('badges').insert({
@@ -58,7 +58,7 @@ exports.seed = function(knex, Promise) {
         }),
       ]);
     })
-    .then(function() {
+    .then(() => {
       return knex.raw("SELECT setval('badges_id_seq', (SELECT MAX(id) FROM badges))");
     });
 };
