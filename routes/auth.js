@@ -9,7 +9,7 @@ const passportGitHub = require('../auth/github');
 route.get('/auth/github', passportGitHub.authenticate('github', { scope: [ 'user: email' ] }));
 
 route.get('/auth/github/callback', passportGitHub.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(`/badges/${req.user.github_id}`);
+  res.redirect(`/badges.html`);
 });
 
 module.exports = route;
