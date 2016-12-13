@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
+const authenticate = require('./auth/verification');
 
 require('dotenv').config();
 
@@ -19,6 +20,35 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//protection our static pages
+app.use('/badges.html', authenticate, (req, res, next) =>{
+  if(!req.user){
+    res.redirect('/login.html');
+  } else {
+    next();
+  }
+});
+app.use('/dailyplan.html', authenticate, (req, res, next) =>{
+  if(!req.user){
+    res.redirect('/login.html');
+  } else {
+    next();
+  }
+});
+app.use('/index.html', authenticate, (req, res, next) =>{
+  if(!req.user){
+    res.redirect('/login.html');
+  } else {
+    next();
+  }
+});
+app.use('/dashboard.html', authenticate, (req, res, next) =>{
+  if(!req.user){
+    res.redirect('/login.html');
+  } else {
+    next();
+  }
+});
 app.use(express.static(path.join('public')));
 
 app.use(bodyParser.json());
