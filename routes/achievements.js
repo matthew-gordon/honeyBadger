@@ -9,7 +9,7 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 
 const boom = require('boom');
 
-route.get('/achievements', (req, res, next) => {
+route.get('/achievements', auth, (req, res, next) => {
   knex('achievements')
     .orderBy('track_id')
     .orderBy('id')
@@ -25,89 +25,86 @@ route.get('/achievements', (req, res, next) => {
 
 
 // make a new badge!
-route.post('/authentication', auth, (req, res, next) => {
+route.post('/achievements', auth, (req, res, next) => {
+  console.log(req.body);
   const decamelAchievements = decamelizeKeys(req.body);
-  console.log(decamelAchievements);
   knex('achievements')
-    .where('name', req.body.id)
+    .where('name', req.body.name)
     .first()
-    .then((results) => {
-      if (!results) {
-        console.log(results);
-        knex('badges')
+    .then((row) => {
+      if (!row) {
+        return knex('achievements')
           .insert({
-            id: decamelAchievements.id,
             name: decamelAchievements.name,
-            image_url: decamelAchievementscamel.image_url,
-            is_complete: decamelAchievements.is_complete
+            image_url: decamelAchievements.image_url,
+            track_id: decamelAchievements.track_id
           }, '*')
-          .then((badges) => {
-            console.log(badges);
-            res.set('Content-Type', 'text/plain');
-            res.send(`${badges[0].name} successfully created`);
+          .then((achievement) => {
+            console.log(achievement);
+            res.send(`${achievement[0].name} successfully created`);
           })
           .catch((err) => {
             // TODO: Use boom to create a custom err
             next(err);
           });
       } else {
-        res.status(400).send('User already exists');
+        res.status(400).send('Achievement already exists');
       }
 
     });
 });
 
 //update one badge!
-route.patch('/badges/:id', auth, (req, res, next) => {
-  const decamelBadges = decamelizeKeys(req.body);
-  knex('badges')
+route.patch('/achievements/:id', auth, (req, res, next) => {
+  const decamelAchievements = decamelizeKeys(req.body);
+  knex('achievements')
     .where('id', req.params.id)
     .first()
-    .then((badge) => {
-      if (!badge) {
+    .then((row) => {
+      if (!row) {
         // TODO: Use boom to create a custom err
         return next();
       }
-      return knex('badges')
+      return knex('achievements')
         .update({
-            user_id: decamelBadges.user_id,
-            name: decamelBadges.name,
-            badge_image_id: decamelBadges.badge_image_id,
-            is_complete: decamelBadges.is_complete
+          id: decamelAchievements.id,
+          name: decamelAchievements.name,
+          image_url: decamelAchievements.image_url,
+          track_id: decamelAchievements.track_id
         }, '*')
         .where('id', req.params.id);
     })
-    .then((badge) => {
-        res.send(camelizeKeys(badge[0]));
+    .then((achievement) => {
+      res.send(camelizeKeys(achievement[0]));
     })
     .catch((err) => {
-        next(boom.create(404, "Not Found"));
+      next(boom.create(404, "Not Found"));
     });
 });
 
 //delete a badge
-route.delete('/badges/:id', auth, (req, res, next) => {
-    let badge;
-    knex('badges')
-        .where('id', req.params.id)
-        .first()
-        .then((row) => {
-            if (!row) {
-                // TODO: Use boom to create a custom err
-                return next();
-            }
-            badge = row;
-            return knex('badges')
-                .del()
-                .where('id', req.params.id);
-        })
-        .then(() => {
-            delete badge.id;
-            res.send(camelizeKeys(badge));
-        })
-        .catch((err) => {
-            next(boom.create(404, "Not Found"));
-        });
+route.delete('/achievements/:id', auth, (req, res, next) => {
+  let delAchievement;
+  knex('achievements')
+    .where('id', req.params.id)
+    .first()
+    .then((row) => {
+      if (!row) {
+        // TODO: Use boom to create a custom err
+        return next();
+      }
+      delAchievement = row;
+      return knex('achievements')
+        .del()
+        .where('id', req.params.id);
+    })
+    .then(() => {
+      delete delAchievement.id;
+      res.send(camelizeKeys(delAchievement));
+    })
+    .catch((err) => {
+      next(boom.create(404, "Not Found"));
+    });
 });
 
 module.exports = route;
