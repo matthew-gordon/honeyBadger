@@ -4,7 +4,7 @@ $(document).ready(function() {
 // const $badge_call = $('#badge_call');
 const $badgeTest = $('#badgeTest');
 
-  $.getJSON(`badges/8294530`)
+  $.getJSON(`badges/${req.user.github_id}`)
     .done((userBadges) => {
         for ( var i = 0; i < userBadges.length; i++) {
           if (userBadges[i].badgeComplete === true){
