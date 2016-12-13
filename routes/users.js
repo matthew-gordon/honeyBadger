@@ -1,5 +1,6 @@
 'use strict';
 
+const auth = require('../auth/verification');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const knex = require('../knex');
@@ -11,12 +12,11 @@ const {
 const route = express.Router();
 
 //route to get all user information
-route.get('/users', (req, res, next) => {
+route.get('/users', auth,(req, res, next) => {
     knex('users')
-        .orderBy('id')
+        .orderBy('github_id')
         .then((users) => {
             const camelUsers = camelizeKeys(users);
-            res.set('content-type', 'application/json');
             res.send(camelUsers);
         })
         .catch((err) => {
@@ -25,12 +25,12 @@ route.get('/users', (req, res, next) => {
         });
 });
 
-route.get('/users/current', (req, res, next) => {
+route.get('/users/current', auth, (req, res, next) => {
   res.send(req.user);
 });
 
 //route to get a specfic users
-route.get('/users/:id', (req, res, next) => {
+route.get('/users/:id', auth, (req, res, next) => {
     //TODO: find max id and make sure `${id}` < max id in db
     if (isNaN(req.params.id)) {
         //TODO:use boom to create a custom error
@@ -45,7 +45,7 @@ route.get('/users/:id', (req, res, next) => {
                 return next();
             }
             const camelUser = camelizeKeys(user);
-            res.set('content-type', 'application/json');
+            // res.set('content-type', 'application/json');
             res.send(camelUser);
         })
         .catch((err) => {
@@ -55,7 +55,7 @@ route.get('/users/:id', (req, res, next) => {
 });
 
 //route to add an user with a hashed password
-route.post('/users', (req, res, next) => {
+route.post('/users', auth, (req, res, next) => {
     console.log(req.body);
     const decamelBadges = decamelizeKeys(req.body);
     // var hash = bcrypt.hashSync(req.body.password, 8);
@@ -86,7 +86,7 @@ route.post('/users', (req, res, next) => {
 });
 
 //Update one user!!!
-route.patch('/users/:id', (req, res, next) => {
+route.patch('/users/:id', auth, (req, res, next) => {
     const decamelUsers = decamelizeKeys(req.body);
     knex('users')
         .where('id', req.params.id)
@@ -112,7 +112,7 @@ route.patch('/users/:id', (req, res, next) => {
         });
 });
 
-route.delete('/users/:id', (req, res, next) => {
+route.delete('/users/:id', auth, (req, res, next) => {
     let user;
     knex('users')
         .where('id', req.params.id)
