@@ -33,6 +33,11 @@ body {
     animation-direction: alternate;
 }
 
+.chip {
+  background: #fbc02d;
+  color #fff;
+}
+
 /* -- KEYFRAMES -- */
 
 @keyframes rotate {
