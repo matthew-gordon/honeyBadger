@@ -58,11 +58,13 @@ const auth = require('./routes/auth');
 const login = require ('./routes/login');
 const users = require('./routes/users');
 const badges = require('./routes/badges');
+const achievements = require('./routes/achievements');
 
 app.use(auth);
 app.use(login);
 app.use(users);
 app.use(badges);
+app.use(achievements);
 
 //not 100% sure what this does but im pretty sure we need it. kg
 // from MattG: @kg morgan is an HTTP request logger, this switches the length of the
