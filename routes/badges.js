@@ -3,6 +3,7 @@
 const express = require('express');
 const knex = require('../knex');
 const route = express.Router();
+const auth = require('../auth/verification');
 
 const { camelizeKeys, decamelizeKeys } = require('humps');
 
@@ -26,7 +27,9 @@ const boom = require('boom');
 // });
 
 //from user id get all info related to selected user
-route.get('/badges/:userid', (req, res, next) =>{
+
+
+route.get('/badges/:userid', auth, (req, res, next) =>{
   if (isNaN(req.params.userid)) {
       // TODO: Use boom to create a custom err
       return next();
