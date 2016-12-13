@@ -26,7 +26,7 @@ route.get('/users', (req, res, next) => {
 });
 
 route.get('/users/current', (req, res, next) => {
-  res.send(req.user.github_id);
+  res.send(req.user);
 });
 
 //route to get a specfic users
