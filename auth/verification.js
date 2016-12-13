@@ -3,7 +3,8 @@
 
 
 function ensureAuthenticated(req, res, next) {
-  console.log(req);
+  return next();
+  // console.log(req);
   // if (req.user) {
   //   const userID = parseInt(req.user.id);
     // userQueries.getSingleUserByID(userID, (err, user) => {
