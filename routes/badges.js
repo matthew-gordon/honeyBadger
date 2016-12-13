@@ -87,7 +87,7 @@ route.get('/badges/:userid', auth, (req, res, next) =>{
 // });
 
 // make a new badge!
-route.post('/badges', (req, res, next) => {
+route.post('/badges', auth, (req, res, next) => {
     const decamelBadges = decamelizeKeys(req.body);
     console.log(decamelBadges);
     knex('badges')
@@ -119,7 +119,7 @@ route.post('/badges', (req, res, next) => {
 });
 
 //update one badge!
-route.patch('/badges/:id', (req, res, next) => {
+route.patch('/badges/:id', auth, (req, res, next) => {
     const decamelBadges = decamelizeKeys(req.body);
     knex('badges')
         .where('id', req.params.id)
@@ -147,7 +147,7 @@ route.patch('/badges/:id', (req, res, next) => {
 });
 
 //delete a badge
-route.delete('/badges/:id', (req, res, next) => {
+route.delete('/badges/:id', auth, (req, res, next) => {
     let badge;
     knex('badges')
         .where('id', req.params.id)
