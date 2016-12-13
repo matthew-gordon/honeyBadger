@@ -25,6 +25,10 @@ route.get('/users', (req, res, next) => {
         });
 });
 
+route.get('/users/current', (req, res, next) => {
+  res.send(req.user.github_id);
+});
+
 //route to get a specfic users
 route.get('/users/:id', (req, res, next) => {
     //TODO: find max id and make sure `${id}` < max id in db
