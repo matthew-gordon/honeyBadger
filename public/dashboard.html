@@ -21,16 +21,15 @@
 
   <!-- NAVIGATION
   ============================================================= -->
-
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
   <nav class="yellow darken-2" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Honey Badger</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="badges.html">badges</a></li>
-        <li><a href="dailyplan.html">dailyplan</a></li>
-        <li><a href="dashboard.html">dashboard</a></li>
-        <li><a href="index.html">home</a></li>
-        <li><a href="login.html">login</a></li>
-      </ul>
+
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="badges.html">badges</a></li>
@@ -38,7 +37,12 @@
         <li><a href="dashboard.html">dashboard</a></li>
         <li><a href="index.html">home</a></li>
         <li><a href="login.html">login</a></li>
+        <!-- <li id="user"> -->
+          <!-- dynamic content-->
+        <!-- </li> -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1" id="user"><!--dynamic content --><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
+
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
