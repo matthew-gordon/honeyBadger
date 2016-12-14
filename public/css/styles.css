@@ -51,11 +51,6 @@ body {
   width: 8rem;
 }
 
-.badge:hover {
-    animation: rotate 1.5s;
-    animation-direction: alternate;
-}
-
 #badger {
   padding-top: .6rem;
   width: 3em;
@@ -86,13 +81,13 @@ body {
 }
 /* -- KEYFRAMES -- */
 
-@keyframes rotate {
+/*@keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
     }
-}
+}*/
 
 /* -- BUTTONS -- */
