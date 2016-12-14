@@ -54,6 +54,13 @@ $.getJSON(`users/current`)
           .fail(() => {
             Materialize.toast('Unable to retrieve achievements', 3000);
           });
+
+        let $masterbadge = $('#masterbadge');
+        if (completedBadges.length === 8) {
+          $masterbadge.attr('src','img/htmlgold.svg');
+          $masterbadge.removeClass('badgeInactive');
+        }
+
       })
       .fail(() => {
         Materialize.toast('Unable to retrieve badges', 3000);
