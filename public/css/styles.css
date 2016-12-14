@@ -11,6 +11,29 @@ body {
   justify-content: space-around;
 }
 
+.page-footer.yellow.darken-2 {
+  margin-top: 0;
+}
+
+/* -- BANNER -- */
+
+#index-banner {
+  background:
+   linear-gradient(
+     rgba(0, 0, 0, 0.45),
+     rgba(0, 0, 0, 0.45)
+   ),
+  url('../img/spalsh.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-shadow: 0 3px 3px rgba(65, 65, 65, 1);
+  text-stroke: #333;
+  -moz-box-shadow:    inset 0 0 20px #000;
+  -webkit-box-shadow: inset 0 0 20px #000;
+  box-shadow:         inset 0 0 20px #000;
+}
+
 /* -- BADGES -- */
 
 .achievementBadge {
@@ -29,13 +52,13 @@ body {
 }
 
 .badge:hover {
-    animation: rotate 1.5s infinite;
+    animation: rotate 1.5s;
     animation-direction: alternate;
 }
 
 #badger {
   padding-top: .6rem;
-  opacity: 0.25;
+  width: 3em;
 }
 
 
@@ -43,22 +66,24 @@ body {
   background: #fbc02d;
   color #fff;
 }
-a:link {
-    color: #FBC02D;
+
+/* -- AVATAR -- */
+
+.avatarSmall {
+  width: 20px;
 }
 
-a:visited {
-    color: #FBC02D;
+.avatarMedium {
+  width: 40px;
 }
 
-a:hover {
-    color: #FBC02D;
+.avatarLarge {
+  width: 60px;
 }
 
-a:active {
-    color: #FBC02D;
+.avatar {
+  width: 100%;
 }
-
 /* -- KEYFRAMES -- */
 
 @keyframes rotate {
