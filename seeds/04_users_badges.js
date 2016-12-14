@@ -47,24 +47,6 @@ exports.seed = (knex, Promise) => {
           user_id: 8294530,
           badge_id: 7,
           is_complete: true
-        }),
-        knex('users_badges').insert({
-          id: 8,
-          user_id: 8294530,
-          badge_id: 8,
-          is_complete: true
-        }),
-        knex('users_badges').insert({
-          id: 9,
-          user_id: 8294530,
-          badge_id: 9,
-          is_complete: true
-        }),
-        knex('users_badges').insert({
-          id: 10,
-          user_id: 8294530,
-          badge_id: 10,
-          is_complete: true
         })
       ]);
     })
