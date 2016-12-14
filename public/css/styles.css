@@ -9,7 +9,17 @@ body {
 .flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeRow {
+  margin-top: -5vh;
+  margin-bottom: -10vh;
 }
 
 .page-footer.yellow.darken-2 {

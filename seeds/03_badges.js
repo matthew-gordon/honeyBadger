@@ -18,44 +18,29 @@ exports.seed = (knex, Promise) => {
         }),
         knex('badges').insert({
           id: 3,
-          name: "HTML Bronze 3",
-          badge_image_id: 1
-        }),
-        knex('badges').insert({
-          id: 4,
           name: "HTML Silver 1",
           badge_image_id: 2
         }),
         knex('badges').insert({
-          id: 5,
+          id: 4,
           name: "HTML Silver 2",
           badge_image_id: 2
         }),
         knex('badges').insert({
-          id: 6,
+          id: 5,
           name: "HTML Silver 3",
           badge_image_id: 2
         }),
         knex('badges').insert({
-          id: 7,
+          id: 6,
           name: "HTML Gold 1",
           badge_image_id: 3
         }),
         knex('badges').insert({
-          id: 8,
+          id: 7,
           name: "HTML Gold 2",
           badge_image_id: 3
-        }),
-        knex('badges').insert({
-          id: 9,
-          name: "HTML Gold 3",
-          badge_image_id: 3
-        }),
-        knex('badges').insert({
-          id: 10,
-          name: "HTML Master Badge",
-          badge_image_id: 3
-        }),
+        })
       ]);
     })
     .then(() => {

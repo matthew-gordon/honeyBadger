@@ -9,51 +9,45 @@ exports.seed = (knex, Promise) =>{
         knex('tracks_badges').insert({
           id: 1,
           track_id: 1,
-          badge_id: 10,
+          badge_id: 7,
           position: 1
         }),
         knex('tracks_badges').insert({
           id: 2,
           track_id: 1,
-          badge_id: 9,
+          badge_id: 6,
           position: 2
         }),
         knex('tracks_badges').insert({
           id: 3,
           track_id: 1,
-          badge_id: 8,
+          badge_id: 5,
           position: 3
         }),
         knex('tracks_badges').insert({
           id: 4,
           track_id: 1,
-          badge_id: 6,
+          badge_id: 4,
           position: 4
         }),
         knex('tracks_badges').insert({
           id: 5,
           track_id: 1,
-          badge_id: 5,
+          badge_id: 3,
           position: 5
         }),
         knex('tracks_badges').insert({
           id: 6,
           track_id: 1,
-          badge_id: 4,
+          badge_id: 2,
           position: 6
         }),
         knex('tracks_badges').insert({
           id: 7,
           track_id: 1,
-          badge_id: 2,
-          position: 7
-        }),
-        knex('tracks_badges').insert({
-          id: 8,
-          track_id: 1,
           badge_id: 1,
-          position: 8
-        }),
+          position: 7
+        })
       ]);
     })
     .then(() => {
