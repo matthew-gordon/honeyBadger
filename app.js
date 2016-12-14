@@ -15,8 +15,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true
+  resave: false,
+  saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
