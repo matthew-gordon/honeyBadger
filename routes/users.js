@@ -11,7 +11,7 @@ const {
 const route = express.Router();
 
 //route to get all user information
-route.get('/users', auth,(req, res, next) => {
+route.get('/users', auth, (req, res, next) => {
     knex('users')
         .orderBy('github_id')
         .then((users) => {
@@ -25,7 +25,7 @@ route.get('/users', auth,(req, res, next) => {
 });
 
 route.get('/users/current', auth, (req, res, next) => {
-  res.send(req.user);
+    res.send(req.user);
 });
 
 //route to get a specfic users
@@ -44,7 +44,6 @@ route.get('/users/:id', auth, (req, res, next) => {
                 return next();
             }
             const camelUser = camelizeKeys(user);
-            // res.set('content-type', 'application/json');
             res.send(camelUser);
         })
         .catch((err) => {
@@ -55,7 +54,6 @@ route.get('/users/:id', auth, (req, res, next) => {
 
 //route to add an user with a hashed password
 route.post('/users', auth, (req, res, next) => {
-
     const decamelBadges = decamelizeKeys(req.body);
     // var hash = bcrypt.hashSync(req.body.password, 8);
     knex('users')
@@ -71,8 +69,8 @@ route.post('/users', auth, (req, res, next) => {
                     }, ['id', 'email', 'is_admin'])
                     .then((users) => {
 
-                      res.set('Content-Type', 'text/plain');
-                      res.send(`${users[0].email} successfully created`);
+                        res.set('Content-Type', 'text/plain');
+                        res.send(`${users[0].email} successfully created`);
                     })
                     .catch((err) => {
                         // TODO: Use boom to create a custom err

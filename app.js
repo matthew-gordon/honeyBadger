@@ -67,8 +67,7 @@ app.use(users);
 app.use(badges);
 app.use(achievements);
 
-//not 100% sure what this does but im pretty sure we need it. kg
-// from MattG: @kg morgan is an HTTP request logger, this switches the length of the
+
 // output to the logger depending on what environmnt the app is in
 
 switch (app.get('env')) {
@@ -82,7 +81,6 @@ switch (app.get('env')) {
 
   default:
 }
-// and i believe this is the error handling
 
 app.use((err, req, res, next) => {
   if (err.output && err.output.statusCode) {
@@ -94,7 +92,6 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.sendStatus(500);
 });
-// ^ kg
 
 
 app.listen(port, () => {
