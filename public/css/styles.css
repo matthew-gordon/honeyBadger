@@ -108,4 +108,10 @@ body {
     }
 }*/
 
-/* -- BUTTONS -- */
+/* -- Media Query -- */
+
+@media (max-width: 800px) {
+  .col {
+    margin-top: 10vh;
+  }
+}
