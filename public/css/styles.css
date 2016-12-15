@@ -6,6 +6,11 @@ body {
   flex-direction: column;
 }
 
+.save_button {
+  border-radius: 20px;
+  height: 2.5rem;
+}
+
 .flex {
   display: flex;
   flex-direction: row;
@@ -24,6 +29,18 @@ body {
 
 .page-footer.yellow.darken-2 {
   margin-top: 0;
+}
+
+#dropdown2 {
+  width: 200px;
+}
+
+#student_select {
+  width: 200px;
+}
+
+.selected_student {
+
 }
 
 /* -- BANNER -- */

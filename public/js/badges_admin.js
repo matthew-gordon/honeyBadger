@@ -7,6 +7,10 @@ $(".button-collapse").sideNav();
 // Initialize tooltips
 $('.tooltipped').tooltip({delay: 50});
 
+$('.save_button').click(() => {
+  console.log($('#student_select'));
+});
+
 $.getJSON(`users/current`)
   .done((user) => {
     let $user = $('#user');
@@ -18,7 +22,7 @@ $.getJSON(`users/current`)
       '</div>'
     );
 
-    let $student = $('#student_select');
+    let $student = $('#dropdown2');
 
     $.getJSON('users')
       .done((users) => {
@@ -28,11 +32,15 @@ $.getJSON(`users/current`)
           if (users[i].isAdmin === false) {
             students.push(user[i]);
             $student.append(`<li><div id="${users[i].githubId}" class="chip"><img src=${users[i].ghAvatarUrl}">${users[i].name}</div></li>`);
-            console.log(users[i].githubId);
 
             $(`#${users[i].githubId}`).click(() => {
-              console.log(users[i].githubId);
+
               let id = users[i].githubId;
+
+              $('.goldLevel').empty();
+              $('.silverLevel').empty();
+              $('.bronzeLevel').empty();
+
               $.getJSON(`badges/${id}`)
                 .done((userBadges) => {
 
@@ -82,19 +90,13 @@ $.getJSON(`users/current`)
 
                           $track.children('.goldLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeCompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
-
                         } else if (trackArray[k][i].badgeTrackPosition < 6 && trackArray[k][i].badgeTrackPosition > 2) {
 
                           $track.children('.silverLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeCompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
-
                         } else {
 
                           $track.children('.bronzeLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeCompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
-
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
 
                         }
 
@@ -103,23 +105,31 @@ $.getJSON(`users/current`)
                         if(trackArray[k][i].badgeTrackPosition < 3 && trackArray[k][i].badgeTrackPosition > 0) {
                           $track.children('.goldLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeIncompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
-
                         } else if (trackArray[k][i].badgeTrackPosition < 6 && trackArray[k][i].badgeTrackPosition > 2) {
 
                           $track.children('.silverLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeIncompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
-
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
 
                         } else {
 
                           $track.children('.bronzeLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeIncompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
-                          $(`#badge${trackArray[k][i].badgeId}`).tooltip();
                         }
 
                       }
+                      $(`#badge${trackArray[k][i].badgeId}`).tooltip();
+                      $(`#badge${trackArray[k][i].badgeId}`).click(() => {
 
+                        if ($(`#badge${trackArray[k][i].badgeId}`).attr('src') === `${trackArray[k][i].badgeIncompleteLocation}`) {
+
+                          $(`#badge${trackArray[k][i].badgeId}`).attr('src', `${trackArray[k][i].badgeCompleteLocation}`);
+
+                        } else if ($(`#badge${trackArray[k][i].badgeId}`).attr('src') === `${trackArray[k][i].badgeCompleteLocation}`) {
+
+                          $(`#badge${trackArray[k][i].badgeId}`).attr('src', `${trackArray[k][i].badgeIncompleteLocation}`);
+
+                        }
+
+                      });
                     }
                 }
 
