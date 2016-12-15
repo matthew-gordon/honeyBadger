@@ -9,6 +9,12 @@ exports.seed = (knex, Promise) => {
         knex('tracks').insert({
           id: 1,
           name: 'HTML/CSS'
+        }),knex('tracks').insert({
+          id: 2,
+          name: 'Javascript'
+        }),knex('tracks').insert({
+          id: 3,
+          name: 'Postgres'
         })
       ]);
     })
