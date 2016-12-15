@@ -121,13 +121,13 @@ exports.seed = (knex, Promise) => {
           is_complete: true
         }),
         knex('users_badges').insert({
-          id: 19,
+          id: 20,
           user_id: 8294530,
           badge_id: 20,
           is_complete: true
         }),
         knex('users_badges').insert({
-          id: 19,
+          id: 21,
           user_id: 8294530,
           badge_id: 21,
           is_complete: true
