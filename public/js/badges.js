@@ -109,31 +109,47 @@ $.getJSON(`users/current`)
             if (completedBadges.length === 7) {
               $track.children().children('.masterbadge').attr('src','img/htmlgold.svg');
             }
-          }
+
         }
 
         $.getJSON('achievements')
-          .done((achievements) => {
+        .done((achievements) => {
 
-            // if (completedBadges.includes(1) && completedBadges.includes(2)) {
-            //   $achievements.append(`<li><img id="achievement1" src="img/htmlgold.svg" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[0].name}" ></img></li>`);
-            //   $('#achievement1').tooltip();
-            // }
-            //
-            // if (completedBadges.includes(3) && completedBadges.includes(4) && completedBadges.includes(5)) {
-            //   $achievements.append(`<li><img id="achievement2" src="img/htmlgold.svg" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[1].name}" ></img></li>`);
-            //   $('#achievement2').tooltip();
-            // }
-            //
-            // if (completedBadges.includes(6) && completedBadges.includes(7)) {
-            //   $achievements.append(`<li><img id="achievement3" src="img/htmlgold.svg" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[2].name}" ></img></li>`);
-            //   $('#achievement3').tooltip();
-            // }
+          if (completedBadges.includes(1) && completedBadges.includes(2)) {
+            $achievements.append(`<li><img id="achievement1" src="${achievements[0].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[0].name}"></img></li>`);
+            $('#achievement1').tooltip();
+          }
 
-          })
-          .fail(() => {
-            Materialize.toast('Unable to retrieve achievements', 3000);
-          });
+          if (completedBadges.includes(3) && completedBadges.includes(4) && completedBadges.includes(5)) {
+            $achievements.append(`<li><img id="achievement2" src="${achievements[1].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[1].name}"></img></li>`);
+            $('#achievement2').tooltip();
+          }
+
+          if (completedBadges.includes(6) && completedBadges.includes(7)) {
+            $achievements.append(`<li><img id="achievement3" src="${achievements[2].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[2].name}"></img></li>`);
+            $('#achievement3').tooltip();
+          }
+
+          if (completedBadges.includes(1) && completedBadges.includes(2)) {
+            $achievements.append(`<li><img id="achievement4" src="${achievements[3].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[3].name}"></img></li>`);
+            $('#achievement4').tooltip();
+          }
+
+          if (completedBadges.includes(3) && completedBadges.includes(4) && completedBadges.includes(5)) {
+            $achievements.append(`<li><img id="achievement5" src="${achievements[4].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[4].name}"></img></li>`);
+            $('#achievement5').tooltip();
+          }
+
+          if (completedBadges.includes(6) && completedBadges.includes(7)) {
+            $achievements.append(`<li><img id="achievement6" src="${achievements[5].imageUrl}" class="achievementBadge tooltipped" data-position="bottom" data-delay="50" data-tooltip="${achievements[5].name}"></img></li>`);
+            $('#achievement3').tooltip();
+          }
+
+        })
+        .fail(() => {
+          Materialize.toast('Unable to retrieve achievements', 3000);
+        });
+      }
 
       })
       .fail(() => {
@@ -144,5 +160,4 @@ $.getJSON(`users/current`)
   .fail(() => {
     Materialize.toast('Unable to retrieve user', 3000);
   });
-
 });
