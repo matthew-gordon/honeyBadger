@@ -11,7 +11,7 @@ const {
 const route = express.Router();
 
 //route to get all user information
-route.get('/users', auth,(req, res, next) => {
+route.get('/users', auth, (req, res, next) => {
     knex('users')
         .orderBy('github_id')
         .then((users) => {
