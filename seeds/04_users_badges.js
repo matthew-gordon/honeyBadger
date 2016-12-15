@@ -47,6 +47,90 @@ exports.seed = (knex, Promise) => {
           user_id: 8294530,
           badge_id: 7,
           is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 8,
+          user_id: 8294530,
+          badge_id: 8,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 9,
+          user_id: 8294530,
+          badge_id: 9,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 10,
+          user_id: 8294530,
+          badge_id: 10,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 11,
+          user_id: 8294530,
+          badge_id: 11,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 12,
+          user_id: 8294530,
+          badge_id: 12,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 13,
+          user_id: 8294530,
+          badge_id: 13,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 14,
+          user_id: 8294530,
+          badge_id: 14,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 15,
+          user_id: 8294530,
+          badge_id: 15,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 16,
+          user_id: 8294530,
+          badge_id: 16,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 17,
+          user_id: 8294530,
+          badge_id: 17,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 18,
+          user_id: 8294530,
+          badge_id: 18,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 19,
+          user_id: 8294530,
+          badge_id: 19,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 19,
+          user_id: 8294530,
+          badge_id: 19,
+          is_complete: true
+        }),
+        knex('users_badges').insert({
+          id: 19,
+          user_id: 8294530,
+          badge_id: 19,
+          is_complete: true
         })
       ]);
     })
