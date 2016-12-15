@@ -114,7 +114,6 @@ $.getJSON(`users/current`)
 
         }
 
-        console.log(completedBadges.length);
         if (completedBadges.length === 7) {
           $track.children().children('.masterbadge').attr('src',`img/${track}gold.svg`);
         }
