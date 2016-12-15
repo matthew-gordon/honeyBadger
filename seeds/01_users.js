@@ -11,6 +11,12 @@ exports.seed = (knex, Promise) => {
           name: 'chansehorton',
           is_admin: false,
           gh_avatar_url: 'https://avatars.githubusercontent.com/u/8294530?v=3'
+        }),
+        knex('users').insert({
+          github_id: 24591915,
+          name: 'snappish-dev',
+          is_admin: true,
+          gh_avatar_url: 'https://avatars.githubusercontent.com/u/24591915?v=3'
         })
       ]);
     });
