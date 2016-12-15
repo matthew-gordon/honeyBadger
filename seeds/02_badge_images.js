@@ -23,18 +23,18 @@ exports.seed = (knex, Promise) => {
         }),
         knex('badge_images').insert({
           id: 4,
-          complete_icon_url: '/img/cssbronze.svg',
-          incomplete_icon_url: '/img/cssbadge.svg'
+          complete_icon_url: '/img/jsbronze.svg',
+          incomplete_icon_url: '/img/jsbadge.svg'
         }),
         knex('badge_images').insert({
           id: 5,
-          complete_icon_url: '/img/csssilver.svg',
-          incomplete_icon_url: '/img/cssbadge.svg'
+          complete_icon_url: '/img/jssilver.svg',
+          incomplete_icon_url: '/img/jsbadge.svg'
         }),
         knex('badge_images').insert({
           id: 6,
-          complete_icon_url: '/img/cssgold.svg',
-          incomplete_icon_url: '/img/cssbadge.svg'
+          complete_icon_url: '/img/jsgold.svg',
+          incomplete_icon_url: '/img/jsbadge.svg'
         }),
         knex('badge_images').insert({
           id: 7,
