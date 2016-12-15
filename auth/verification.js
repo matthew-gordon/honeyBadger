@@ -3,7 +3,6 @@
 const knex = require('../knex');
 
 function ensureAuthenticated(req, res, next) {
-  // return next();
   if (req.user) {
     knex('users')
     .select('github_id', req.user)
@@ -17,8 +16,6 @@ function ensureAuthenticated(req, res, next) {
     return res.redirect('../login.html');
   }
 }
-  //   return res.redirect('../login.html');
-  // }
 
 
 
