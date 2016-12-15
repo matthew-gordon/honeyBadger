@@ -130,7 +130,7 @@ exports.seed = (knex, Promise) => {
           id: 21,
           user_id: 8294530,
           badge_id: 21,
-          is_complete: true
+          is_complete: false
         })
       ]);
     })
