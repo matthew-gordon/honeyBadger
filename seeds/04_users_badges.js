@@ -82,7 +82,7 @@ exports.seed = (knex, Promise) => {
           id: 13,
           user_id: 8294530,
           badge_id: 13,
-          is_complete: true
+          is_complete: false
         }),
         knex('users_badges').insert({
           id: 14,

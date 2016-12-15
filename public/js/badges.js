@@ -86,13 +86,12 @@ $.getJSON(`users/current`)
 
             } else {
 
-              if(trackArray[k][i].badgeId < 8 && trackArray[k][i].badgeId > 5) {
-
+              if(trackArray[k][i].badgeTrackPosition < 3 && trackArray[k][i].badgeTrackPosition > 0) {
                 $track.children('.goldLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeIncompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
                 $(`#badge${trackArray[k][i].badgeId}`).tooltip();
 
-              } else if (trackArray[k][i].badgeId < 6 && trackArray[k][i].badgeId > 2) {
+              } else if (trackArray[k][i].badgeTrackPosition < 6 && trackArray[k][i].badgeTrackPosition > 2) {
 
                 $track.children('.silverLevel').append(`<img id="badge${trackArray[k][i].badgeId}" src= "${trackArray[k][i].badgeIncompleteLocation}" class="badgeInactiveSmall tooltipped" data-position="top" data-delay="50" data-tooltip="${trackArray[k][i].badgeName}">`);
 
